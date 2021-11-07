@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView
 from rest_framework import filters
 from .models import Employee
@@ -10,6 +9,3 @@ class EmployeesList(ListAPIView):
     serializer_class = EmployeeSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['level']
-
-
-# Create your views here.

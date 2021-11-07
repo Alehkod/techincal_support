@@ -4,8 +4,8 @@ from .models import Employee
 
 
 class EmployeeSerializer(serializers.ModelSerializer):
-    children = RecursiveField(many=True)
+    # children = RecursiveField(many=True)
 
     class Meta:
         model = Employee
-        fields = '__all__'
+        fields = ['id', 'name', 'position', 'parent', 'salary', 'paid_salary', 'level']
