@@ -4,7 +4,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Employee(MPTTModel):
-    # user = models.OneToOneField(User, related_name='login', on_delete=models.CASCADE, null=True, blank=True)
+    user = models.OneToOneField(User, related_name='login', on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(verbose_name='ФИО', max_length=150, blank=True)
     position = models.CharField(verbose_name='Должность', max_length=150, blank=True)
     hire_data = models.DateTimeField(verbose_name='Дата приема на работу', null=True, blank=True)

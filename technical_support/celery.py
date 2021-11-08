@@ -11,7 +11,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'update-paid-salary-every-2-hour-': {
         'task': 'employees.tasks.update_paid_salary',
-        'schedule': crontab(hour='*/2')
+        'schedule': crontab(minute=0, hour='*/2')
     },
 
 }
