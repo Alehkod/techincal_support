@@ -20,7 +20,7 @@ class EmployeeAdmin(admin.ModelAdmin):
             pk_json = serializers.serialize('json', queryset, fields='pk')
             rm_paid_salary_celery.delay(pk_json)
         else:
-            queryset.update(paid_salary=1000)
+            queryset.update(paid_salary=0)
 
     actions = [rm_paid_salary]
 
